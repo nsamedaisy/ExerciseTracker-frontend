@@ -1,0 +1,22 @@
+h1 {
+  margin-bottom: 15%;
+}
+
+h3 {
+  background-color: #e9e99a;
+  font-size: 15px;
+  padding: 2px;
+}
+
+.user-form {
+  width: 70%;
+  margin: 0;
+}
+
+.get-users {
+  margin-top: 50px;
+}
+
+span {
+  font-weight: bold;
+}

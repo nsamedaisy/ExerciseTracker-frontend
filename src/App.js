@@ -1,22 +1,25 @@
 import React from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 
-import Navbar from "./components/navbar";
-import ExerciseList from "./components/exercisesList";
-import EditExercise from "./components/editExercise";
-import CreateExercise from "./components/createExercise";
-import CreateUser from "./components/createUser";
+import CreateExercise from "./components/Exercise/createExercise";
+import CreateUser from "./components/User/createUser";
 
 function App() {
   return (
-    <Router>
-      <Navbar />
-      <br />
-      <Route path="/" exact Component={ExerciseList} />
-      <Route path="/edit/:id" exact Component={EditExercise} />
-      <Route path="/create" exact Component={CreateExercise} />
-      <Route path="/user" exact Component={CreateUser} />
+    <div style={{display: 'flex',  margin: "5%"}}>
+      <Router>
+      <CreateUser />
+      <CreateExercise />
+      {/* <Routes>
+        <Route>
+          <R/
+oute path="/" exact Component={CreateExercise} />
+        <Route path="/" exact Component={CreateUser} />
+        </Route>
+      </Routes> */}
     </Router>
+    </div>
+    
   );
 }
 
