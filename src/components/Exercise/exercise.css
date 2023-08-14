@@ -1,24 +1,18 @@
-form {
-  background-color: #87d587;
-  width: 100%;
-  line-height: 2;
+
+.exercise-form {
+  line-height: 1.5;
+  height: fit-content;
+  background-color: purple;
+  width: 18%;
   font-size: 18px;
   padding: 20px;
   border-radius: 10px;
-}
-.exercise-form {
-  width: 18vw;
-  margin-top: 25px;
 }
 
 input {
   width: 100%;
   margin: auto;
-  padding: 5px;
+  padding: px;
   border: none;
   font-size: 16px;
-}
-
-.left {
-  /* margin-right: 55px; */
 }

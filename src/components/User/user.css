@@ -1,22 +1,32 @@
-h1 {
-  margin-bottom: 15%;
+h2 {
+  color: white;
 }
 
 h3 {
-  background-color: #e9e99a;
+  background-color: pink;
   font-size: 15px;
-  padding: 2px;
 }
 
 .user-form {
-  width: 70%;
-  margin: 0;
+  line-height: 2;
+  background-color: purple;
+  font-size: 18px;
+  padding: 22px;
+  border-radius: 10px;
+  margin-right: 8px;
+  height: fit-content;
+  width: 18%;
+  margin-top: 3.5%;
 }
 
-.get-users {
-  margin-top: 50px;
+input {
+  width: 100%;
+  box-shadow: 1px 1px 1px 1px white;
+  margin-bottom: 8px;
+  padding: 3px;
 }
 
-span {
-  font-weight: bold;
+.btn {
+  width: 100%;
+  font-size: 16px;
 }

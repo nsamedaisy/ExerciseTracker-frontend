@@ -1,25 +1,23 @@
 import React from "react";
-import { BrowserRouter as Router } from "react-router-dom";
-
-import CreateExercise from "./components/Exercise/createExercise";
-import CreateUser from "./components/User/createUser";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+// import "./index.css"
+import Form from "./components/form/form";
+import DisplayExercise from "./components/displayExercise/DisplayExercise";
+import DisplayUser from "./components/displayUSer/DisplayUser";
 
 function App() {
   return (
-    <div style={{display: 'flex',  margin: "5%"}}>
-      <Router>
-      <CreateUser />
-      <CreateExercise />
-      {/* <Routes>
-        <Route>
-          <R/
-oute path="/" exact Component={CreateExercise} />
-        <Route path="/" exact Component={CreateUser} />
-        </Route>
-      </Routes> */}
+    <Router>
+      <Routes>
+        <Route path="/" exact Component={Form} />
+        <Route path="/users/add" exact Component={DisplayUser} />
+        <Route
+          path="/exercises/add"
+          exact
+          Component={DisplayExercise}
+        />
+      </Routes>
     </Router>
-    </div>
-    
   );
 }
 

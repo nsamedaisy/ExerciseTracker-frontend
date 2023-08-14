@@ -1,36 +1,49 @@
-import React from "react";
+import React, { useState } from "react";
+import axios from "axios";
+import "./user.css";
+import { useNavigate } from "react-router-dom";
 
-function createUser() {
+function CreateUser() {
+  const [username, setUsername] = useState("");
+  const navigate = useNavigate();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    let newData = null;
+    // const newUser = {
+    //   username,
+    // };
+    axios
+      .post("http://localhost:2000/users/add", { username })
+      .then((res) => {
+        newData = res.data;
+        localStorage.setItem("Exercise User", JSON.stringify(newData));
+        console.log("my newData", newData);
+
+        console.log("Responded", res);
+        navigate("./users/add");
+      })
+      .catch((error) => {
+        console.log("error occured on post", error);
+      });
+  };
 
   return (
-    <div className="left">
-      <h1>Exercise Tracker</h1>
-      <form action="" className="user-form">
-        <h2 className="form-group">Create a New User</h2>
-        <h3>POST /api/users</h3>
-        <input type="text" className="form-group" placeholder="username" />
-        <input
-            placeholder="submit"
-            type="submit"
-            // value="Create Exercise Log"
-            className="btn"
-          />
-      </form>
-
-      <div className="get-users">
-        <p>
-          <span>GET user's exercise log: </span>
-          GET /api/users/:_id/logs?[from][&to][&limit]
-        </p>
-        <p>
-          <span>[]</span> = optional{" "}
-        </p>
-        <p>
-          <span>from, to</span> = dates(yyyy-mm-dd); <span>limit</span> = number
-        </p>
-      </div>
+    <div className="user-form">
+      <h2>Create a New User</h2>
+      <h3>POST /api/users</h3>
+      <input
+        type="text"
+        className="form-group"
+        placeholder="Username"
+        value={username}
+        onChange={(e) => setUsername(e.target.value)}
+      />
+      <button className="btn" onClick={handleSubmit}>
+        Submit
+      </button>
     </div>
   );
 }
 
-export default createUser;
+export default CreateUser;
