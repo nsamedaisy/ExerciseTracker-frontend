@@ -21,7 +21,7 @@ function CreateExercise() {
     };
 
     axios
-      .post(`http://localhost:2000/exercises/add/${userId}`, newExercise)
+      .post(`https://backend-exercisetracker.onrender.com/exercises/add/${userId}`, newExercise)
       .then((res) => {
         newData = res.data;
         localStorage.setItem("Exercise Added", JSON.stringify(newData));
