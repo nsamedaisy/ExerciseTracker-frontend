@@ -24,9 +24,8 @@ function CreateExercise() {
       .post(`http://localhost:2000/exercises/add/${userId}`, newExercise)
       .then((res) => {
         newData = res.data;
-        console.log("New Data", newData);
-        localStorage.setItem("Add Exercise", JSON.stringify(newData));
-        console.log(res.data, "Response pass");
+        localStorage.setItem("Exercise Added", JSON.stringify(newData));
+        console.log(res.data, "New exercise created with user");
       })
       .catch((err) => {
         console.log(err, "An error occured");

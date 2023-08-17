@@ -15,6 +15,7 @@ h3 {
   border-radius: 10px;
   margin-right: 8px;
   height: fit-content;
+  max-width: 900px;
   width: 18%;
   margin-top: 3.5%;
 }
