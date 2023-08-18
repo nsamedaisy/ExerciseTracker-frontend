@@ -3,6 +3,8 @@ import axios from "axios";
 import "./user.css";
 import { useNavigate } from "react-router-dom";
 
+const userURL = process.env.REACT_AP_USER_URL;
+
 function CreateUser() {
   const [username, setUsername] = useState("");
   const navigate = useNavigate();
@@ -12,7 +14,7 @@ function CreateUser() {
     let newData = null;
 
     axios
-      .post("http://localhost:2020/users/add", { username })
+      .post(userURL, { username })
       .then((res) => {
         newData = res.data;
         localStorage.setItem("Exercise User", JSON.stringify(newData));

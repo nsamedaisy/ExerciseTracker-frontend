@@ -3,7 +3,6 @@ import axios from "axios";
 // import { useNavigate } from "react-router-dom";
 import "./exercise.css";
 
-// const userURL = process.env.REACT_AP_USER_URL;
 const exerciseUrl = process.env.REACT_APP_EXERCISE_URL;
 
 function CreateExercise() {
