@@ -1,14 +1,17 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import "./exercise.css";
+
+// const userURL = process.env.REACT_AP_USER_URL;
+const exerciseUrl = process.env.REACT_APP_EXERCISE_URL;
 
 function CreateExercise() {
   const [userId, setUserId] = useState("");
   const [description, setDescription] = useState("");
   const [duration, setDuration] = useState("");
   const [date, setDate] = useState("");
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -21,16 +24,17 @@ function CreateExercise() {
     };
 
     axios
-      .post(`https://backend-exercisetracker.onrender.com/exercises/add/${userId}`, newExercise)
+      .post(exerciseUrl, newExercise)
       .then((res) => {
         newData = res.data;
-        localStorage.setItem("Exercise Added", JSON.stringify(newData));
-        console.log(res.data, "New exercise created with user");
+        // localStorage.setItem("Exercise Added", JSON.stringify(newData));
+        console.log(newData, "New exercise created with user");
+        window.open(`http://localhost:2020/exercises/${userId}`, "_blank");
       })
       .catch((err) => {
         console.log(err, "An error occured");
       });
-    navigate(`./exercises/add`);
+    // navigate(`./exercises/add`);
   };
 
   return (

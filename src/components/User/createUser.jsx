@@ -10,11 +10,9 @@ function CreateUser() {
   const handleSubmit = (e) => {
     e.preventDefault();
     let newData = null;
-    // const newUser = {
-    //   username,
-    // };
+
     axios
-      .post("http://localhost:2000/users/add", { username })
+      .post("http://localhost:2020/users/add", { username })
       .then((res) => {
         newData = res.data;
         localStorage.setItem("Exercise User", JSON.stringify(newData));
