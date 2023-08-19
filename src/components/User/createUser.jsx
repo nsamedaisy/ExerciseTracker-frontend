@@ -3,7 +3,7 @@ import axios from "axios";
 import "./user.css";
 import { useNavigate } from "react-router-dom";
 
-const userURL = process.env.REACT_AP_USER_URL;
+// const userURL = process.env.REACT_AP_USER_URL;
 
 function CreateUser() {
   const [username, setUsername] = useState("");
@@ -14,7 +14,7 @@ function CreateUser() {
     let newData = null;
 
     axios
-      .post(userURL, { username })
+      .post("https://exercise-backend-hv5z.onrender.com/users/add", { username })
       .then((res) => {
         newData = res.data;
         localStorage.setItem("Exercise User", JSON.stringify(newData));
