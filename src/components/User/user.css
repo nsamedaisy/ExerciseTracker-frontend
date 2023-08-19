@@ -15,9 +15,8 @@ h3 {
   border-radius: 10px;
   margin-right: 8px;
   height: fit-content;
-  max-width: 900px;
-  width: 18%;
-  margin-top: 3.5%;
+  width: 300px;
+  margin-top: 68px;
 }
 
 input {
@@ -30,4 +29,10 @@ input {
 .btn {
   width: 100%;
   font-size: 16px;
+}
+
+@media screen and (max-width: 630px) {
+  .user-form {
+    margin: 10px 0 30px;
+  }
 }
